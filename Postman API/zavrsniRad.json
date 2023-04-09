@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "b17a926b-0d03-4e1b-abf5-82f8bdc37352",
+		"name": "zavrsniRad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Postman skript",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"responseJson = pm.response.json(),\r",
+							"\t\t\t\t\t\t\tresults = responseJson.results,\r",
+							"\t\t\t\t\t\t    name = results[0].name,\r",
+							"\t\t\t\t\t\t    location = results[0].location,\r",
+							"\t\t\t\t\t\t\tstreet = location.street,\r",
+							"\t\t\t\t\t\t\tid = results[0].id,\r",
+							"\t\t\t\t\t\t\tinfo = responseJson.info,\r",
+							"\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"JSON response has parameters 'results' and 'info'\", function () {\r",
+							"\t\t\t\t\t\t\tpm.expect(responseJson.results).to.exist,\r",
+							"\t\t\t\t\t\t\tpm.expect(responseJson.info).to.exist\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Object 'name' returns data in form of string\"), function () {\r",
+							"\t\t\t\t\t\tpm.expect(name.title).to.be.a(string),\r",
+							"\t\t\t\t\t\tpm.expect(name.first).to.be.a(string)\r",
+							"\t\t\t\t\t\tpm.expect(name.last).to.be.a(string)\r",
+							"};\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://randomuser.me/api/",
+					"protocol": "https",
+					"host": [
+						"randomuser",
+						"me"
+					],
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://randomuser.me/api/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"responseJson = pm.response.json(),\r",
+							"\t\t\t\t\t\t\tresults = responseJson.results,\r",
+							"\t\t\t\t\t\t    name = results[0].name,\r",
+							"\t\t\t\t\t\t    location = results[0].location,\r",
+							"\t\t\t\t\t\t\tstreet = location.street,\r",
+							"\t\t\t\t\t\t\tid = results[0].id,\r",
+							"\t\t\t\t\t\t\tinfo = responseJson.info,\r",
+							"\r",
+							"\"//Test1//\"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\"/Test2//\"\r",
+							"pm.test(\"JSON response has parameters 'results' and 'info'\", function () {\r",
+							"\t\t\t\t\t\t\tpm.expect(responseJson.results).to.exist,\r",
+							"\t\t\t\t\t\t\tpm.expect(responseJson.info).to.exist\r",
+							"});\r",
+							"\r",
+							"\"//Test3//\"\r",
+							"\r",
+							"\t\t\t\t\t\t\tpm.test(\"Object 'name' returns data in form of string\", function () {\r",
+							"\t\t\t\t\t\t\t    pm.expect(name.title).to.be.a('string'),\r",
+							"\t\t\t\t\t\t\t    pm.expect(name.first).to.be.a('string'),\r",
+							"\t\t\t\t\t\t\t    pm.expect(name.last).to.be.a('string')\r",
+							"                            });\r",
+							"\r",
+							"\"//Test4//\"\r",
+							"pm.test(\"Country name is valid\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.results[0].location.country).to.eql(\"United States\");\r",
+							"});\r",
+							"\"//Test5//\"\r",
+							"pm.test(\"Postcode is valid\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.results[0].location.postcode).to.match(/^\\d{5}$/);\r",
+							"});\r",
+							"\r",
+							"\"//Test6//\"\r",
+							"pm.test(\"Location coordinates are valid\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.results[0].location.coordinates.latitude).to.be.a('string');\r",
+							"    pm.expect(jsonData.results[0].location.coordinates.longitude).to.be.a('string');\r",
+							"});\r",
+							"\"//Test7//\"\r",
+							"pm.test(\"Timezone is valid\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.results[0].location.timezone.description).to.be.a('string');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://randomuser.me/api/",
+					"protocol": "https",
+					"host": [
+						"randomuser",
+						"me"
+					],
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "results",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://randomuser.me/api/?results",
+					"protocol": "https",
+					"host": [
+						"randomuser",
+						"me"
+					],
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "results",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lokalizacija",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

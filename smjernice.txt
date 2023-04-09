@@ -1,0 +1,19 @@
+1. Izrada završnog rada
+Svoje završne radove treba da kompletirate u dogovoru sa svojim predavačem i mentorom Atifom Bećirbašićem, koji će vam dati smjernice i uputstva i pomoći da rad pripremite za odbranu.
+Da bi završni rad bio prihvatljiv prilikom odbrane, osim ukoliko u dogovoru sa predavačem nije potvrđeno drugačije, on mora da sadrži sljedeće elemente i tehničke karakteristike:
+Za projekat je potrebno testirati ovaj sajt, pri čemu je potrebno kreirati test plan u kome će biti opisano ko vrši testiranje, šta će sve biti testirano, koji će alati biti korišteni za testiranje,
+koliko će testiranje trajati i sve druge informacije specifične za ciljno testiranje. 
+Ove informacije treba formirati po sopstvenom izboru. Uz to, neophodno je da završni rad uključuje:
+1.	Test plan
+2.	Test book
+3.	Modules overview
+4.	Test cases list
+5.	Apache jMeter tests
+6.	Automated Tests in Selenium
+7.	Postman scripts for https://randomuser.me/api/
+•	Također, potrebno je napisati minimalno 5 skripti u Postmanu koje će uključivati validaciju tipa podataka,
+        ograničenja po npr. imenu države, postcodeu, kordinatama... Identično onome što ste radili na predavanjima.
+•	Potrebno je napisati minimalno 10 automatskih testova u Seleniumu.
+•	Potrebno je pokriti kompletan sajt manualnim testovima.
+•	Rezultat testiranja treba da bude izvještaj sa detaljno opisanim slučajevima testiranja (scenariji i koraci), 
+        načinima njihovog sprovođenja i dobijenim vrijednostima. 
