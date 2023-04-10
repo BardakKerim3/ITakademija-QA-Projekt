@@ -13,10 +13,12 @@ option.add_argument("start-maximized")
 option.add_argument("--disable-extensions")
 option.add_argument("--disable-notification")
 
-driver = webdriver.Chrome (options = option, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\GitHub-Automatski-testovi\\chromedriver.exe")
+driver = webdriver.Chrome (options = option, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\Automatski testovi\\chromedriver.exe" )
 
 driver.get("https://puppies-closet.com/evidencija/login.php")
 time.sleep(3)
+
+
 poljeI = driver.find_element(By.NAME,"username")
 poljeI.send_keys("kerimbardak")
 
@@ -36,21 +38,21 @@ PoljeLastname = driver.find_element(By.NAME,"lastname")
 PoljeLastname.send_keys("Salkić")
 time.sleep(5)
 poljeEmail = driver.find_element(By.NAME,"email")
-poljeEmail.send_keys("salkosalkicxxx@gmail.com") # email
+poljeEmail.send_keys("salkosalkicxxx@gmail.com") 
 
 PoljePhone = driver.find_element(By.NAME,"phone")
-PoljePhone.send_keys("+387 61 542 500") # broj telefona
+PoljePhone.send_keys("+387 61 542 500") 
 
 time.sleep(4)
-dropdown = driver.find_element(By.ID, "office_id")
-dropdown.click()
-select = Select(dropdown)
+padajucimeni = driver.find_element(By.ID, "office_id")
+padajucimeni.click()
+select = Select(padajucimeni)
 select.select_by_index(5)
 
 
-dropdown2 = driver.find_element(By.ID,"organization_id")
-dropdown2.click() # kancelarija
-select = Select(dropdown2)
+padajucimeni2 = driver.find_element(By.ID,"organization_id")
+padajucimeni2.click() 
+select = Select(padajucimeni2)
 select.select_by_index(6)
 time.sleep(3)
 

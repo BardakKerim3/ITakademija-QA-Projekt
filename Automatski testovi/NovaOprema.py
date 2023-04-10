@@ -12,10 +12,12 @@ opcijeZaPokretanje.add_argument("start-maximized")
 opcijeZaPokretanje.add_argument("--disable-extensions") 
 opcijeZaPokretanje.add_argument("--disable-notification")
 
-babic = webdriver.Chrome (options = opcijeZaPokretanje, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\GitHub-Automatski-testovi\\chromedriver.exe")
+babic = webdriver.Chrome (options = opcijeZaPokretanje, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\Automatski testovi\\chromedriver.exe" )
 
 babic.get("https://puppies-closet.com/evidencija/login.php")
 time.sleep(3)
+
+
 poljeI = babic.find_element(By.NAME,"username")
 poljeI.send_keys("kerimbardak")
 

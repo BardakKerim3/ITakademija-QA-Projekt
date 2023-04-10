@@ -5,13 +5,11 @@ from selenium.webdriver.common.by import By
 
 option = Options()
 
-option.add_argument("--disable-infobars") # gasi info barove
-option.add_argument("start-maximized") # govori Chromu da se pokrene preko cijelog ekrana
-option.add_argument("--disable-extensions") # u tom Chromu, isključuje ekstenzije (ako imaš instaliranih)
-option.add_argument("--disable-notification") # isključuje i notifikacije
-
-driver = webdriver.Chrome (options = option, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\GitHub-Automatski-testovi\\chromedriver.exe")
-
+option.add_argument("--disable-infobars")
+option.add_argument("start-maximized")
+option.add_argument("--disable-extensions")
+option.add_argument("--disable-notification")
+driver = webdriver.Chrome (options = option, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\Automatski testovi\\chromedriver.exe" )
 
 driver.get("https://puppies-closet.com/evidencija/login.php")
 

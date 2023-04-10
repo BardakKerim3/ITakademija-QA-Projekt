@@ -11,10 +11,11 @@ opcijeZaPokretanje.add_argument("start-maximized")
 opcijeZaPokretanje.add_argument("--disable-extensions") 
 opcijeZaPokretanje.add_argument("--disable-notification")
 
-babic = webdriver.Chrome (options = opcijeZaPokretanje, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\GitHub-Automatski-testovi\\chromedriver.exe")
+babic = webdriver.Chrome (options = opcijeZaPokretanje, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\Automatski testovi\\chromedriver.exe" )
 
 babic.get("https://puppies-closet.com/evidencija/login.php")
 time.sleep(3)
+
 poljeI = babic.find_element(By.NAME,"username")
 poljeI.send_keys("kerimbardak")
 
@@ -33,15 +34,15 @@ padajuciMeni.click()
 
 
 time.sleep(4)
-dropdown = babic.find_element(By.ID, 'type_id')
-dropdown.click()
-select = Select(dropdown)
+meni = babic.find_element(By.ID, 'type_id')
+meni.click()
+select = Select(meni)
 select.select_by_index(2)
 
 time.sleep(4)
 
-dropdown = Select(babic.find_element_by_id('producer_id'))
-dropdown.select_by_index(2)
+meni = Select(babic.find_element_by_id('producer_id'))
+meni.select_by_index(2)
 time.sleep(2)
 
 brojInventurni = babic.find_element(By.NAME, "inventoryNumber")
