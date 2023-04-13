@@ -2,15 +2,15 @@ from selenium import webdriver
 import time
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 
-opcijeZaPokretanje = Options()
+option = Options()
 
-opcijeZaPokretanje.add_argument("--disable-infobars") 
-opcijeZaPokretanje.add_argument("start-maximized") 
-opcijeZaPokretanje.add_argument("--disable-extensions") 
-opcijeZaPokretanje.add_argument("--disable-notification")
-
-sreca = webdriver.Chrome (options = opcijeZaPokretanje, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\Automatski testovi\\chromedriver.exe" )
+option.add_argument("--disable-infobars")
+option.add_argument("start-maximized")
+option.add_argument("--disable-extensions")
+option.add_argument("--disable-notification")
+sreca = webdriver.Chrome (options = option, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\Automatski testovi\\chromedriver.exe" )
 
 sreca.get("https://puppies-closet.com/evidencija/login.php")
 
@@ -31,11 +31,12 @@ dugmeSlijedeca = sreca.find_element(By.CLASS_NAME, "btnPage")
 dugmeSlijedeca.click()
 
 
-time.sleep(3)
+time.sleep(3)   
+    
 
-zaduzenjeRazduzenje = sreca.find_element(By. CSS_SELECTOR,"#results > div > table > tbody > tr:nth-child(11) > td:nth-child(8) > button.button.red" )
+brisanjePodataka = sreca.find_element(By. CSS_SELECTOR,"#results > div > table > tbody > tr:nth-child(11) > td:nth-child(8) > button.button.red" )
 
-zaduzenjeRazduzenje.click()
+brisanjePodataka.click()
 
 odabir = sreca.find_element(By.ID,"del")
 

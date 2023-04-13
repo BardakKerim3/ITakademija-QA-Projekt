@@ -44,25 +44,32 @@ PoljePhone = driver.find_element(By.NAME,"phone")
 PoljePhone.send_keys("+387 61 542 500") 
 
 time.sleep(4)
-padajucimeni = driver.find_element(By.ID, "office_id")
-padajucimeni.click()
-select = Select(padajucimeni)
-select.select_by_index(5)
+padajucimeni = Select(driver.find_element_by_id("office_id"))
+trazenaKancelarija = "amer"
+
+for kancelarija in padajucimeni.options:
+    if trazenaKancelarija.lower() in kancelarija.text.lower():
+        kancelarija.click()
+        break
+
+time.sleep(5)
+
+padajucimeni2 = Select(driver.find_element_by_name("organization_id"))
+trazenaRijec = "plava"
+
+for rijec in padajucimeni2.options:
+    if trazenaRijec.lower() in rijec.text.lower():
+        rijec.click()
+        break
+time.sleep(4)
 
 
-padajucimeni2 = driver.find_element(By.ID,"organization_id")
-padajucimeni2.click() 
-select = Select(padajucimeni2)
-select.select_by_index(6)
-time.sleep(3)
 
 dugmeSave = driver.find_element(By.NAME, "save")
 dugmeSave.click()
 
 
 time.sleep(2)
-
-
 
 
 

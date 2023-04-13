@@ -12,7 +12,7 @@ opcijeZaPokretanje.add_argument("start-maximized")
 opcijeZaPokretanje.add_argument("--disable-extensions") 
 opcijeZaPokretanje.add_argument("--disable-notification")
 
-oko = webdriver.Chrome (options = opcijeZaPokretanje, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\Automatski testovi\\chromedriver.exe" )
+oko = webdriver.Chrome (options = opcijeZaPokretanje, executable_path = "chromedriver.exe" )
 
 oko.get("https://puppies-closet.com/evidencija/login.php")
 
@@ -28,13 +28,48 @@ dugmePrijava = oko.find_element(By.NAME,"login")
 dugmePrijava.click()
 
 time.sleep(5)
+menuIzvjestaji = oko.find_element_by_tag_name("li")
+trazenaRijec = "Administracija korisnika"
+
+i = 0
+found = False
+
+while not found and i < len(menuIzvjestaji):
+    rijec = menuIzvjestaji[i]
+    v = rijec.text.lower()
+
+    if trazenaRijec in v:
+        print(rijec.text)
+        rijec.click
+        found = True
+    else:
+        i+= 1
+        time.sleep(5)
+"""
+menuIzvjestaji = driver.find_elements_by_tag_name("li")
+trazenaRijec = "OPREMA"
+
+i = 0
+found = False
+
+while not found and i < len(menuIzvjestaji):
+    rijec = menuIzvjestaji[i]
+    v = rijec.text.upper()
+    
+    if trazenaRijec in v:
+        print(rijec.text)
+        rijec.click()
+        found = True
+    else:
+        i += 1
+        time.sleep(4)
 
 administracijaKorisnika = oko.find_element(By.CSS_SELECTOR,"#wrapper > header > nav > ul:nth-child(1) > li:nth-child(6) > a")
 
 administracijaKorisnika.click()
 
 time.sleep(4)
-
+"""
 dugmePromjenaLozinke = oko.find_element(By.CSS_SELECTOR,"#wrapper > div.section-two > div > table > tbody > tr:nth-child(2) > td:nth-child(6) > button.button.blue")
 dugmePromjenaLozinke.click()
 
