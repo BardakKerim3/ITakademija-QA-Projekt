@@ -1,20 +1,24 @@
 
-import time
-from selenium import webdriver
+from selenium import webdriver 
+import time 
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver import ChromeOptions
 
-opcijeZaPokretanje = Options()
+option = Options()
 
-opcijeZaPokretanje.add_argument("--disable-infobars") 
-opcijeZaPokretanje.add_argument("start-maximized") 
-opcijeZaPokretanje.add_argument("--disable-extensions") 
-opcijeZaPokretanje.add_argument("--disable-notification")
+option.add_argument("--disable-infobars")
+option.add_argument("start-maximized")
+option.add_argument("--disable-extensions")
+option.add_argument("--disable-notification")
 
-babic = webdriver.Chrome (options = opcijeZaPokretanje, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\Automatski testovi\\chromedriver.exe" )
+babic = webdriver.Chrome (options = option)
 
 babic.get("https://puppies-closet.com/evidencija/login.php")
+
+
+
 time.sleep(3)
 
 

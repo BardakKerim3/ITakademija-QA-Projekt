@@ -2,18 +2,20 @@ from selenium import webdriver
 import time 
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver import ChromeOptions
 
 option = Options()
 
-option.add_argument("--disable-infobars") # gasi info barove
-option.add_argument("start-maximized") # govori Chromu da se pokrene preko cijelog ekrana
-option.add_argument("--disable-extensions") # u tom Chromu, isključuje ekstenzije (ako imaš instaliranih)
-option.add_argument("--disable-notification") # isključuje i notifikacije
+option.add_argument("--disable-infobars")
+option.add_argument("start-maximized")
+option.add_argument("--disable-extensions")
+option.add_argument("--disable-notification")
 
-driver = webdriver.Chrome (options = option, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\Automatski testovi\\chromedriver.exe" )
+driver = webdriver.Chrome (options = option)
 
 driver.get("https://puppies-closet.com/evidencija/login.php")
-time.sleep(3)
+
 
 poljeI = driver.find_element(By.NAME,"username")
 poljeI.send_keys("kerimbardak")

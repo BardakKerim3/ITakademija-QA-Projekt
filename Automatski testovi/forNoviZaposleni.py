@@ -1,10 +1,10 @@
+
 from selenium import webdriver 
 import time 
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
-
+from selenium.webdriver import ChromeOptions
 
 option = Options()
 
@@ -13,9 +13,12 @@ option.add_argument("start-maximized")
 option.add_argument("--disable-extensions")
 option.add_argument("--disable-notification")
 
-driver = webdriver.Chrome (options = option, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\Automatski testovi\\chromedriver.exe" )
+driver = webdriver.Chrome (options = option)
 
 driver.get("https://puppies-closet.com/evidencija/login.php")
+
+
+
 time.sleep(3)
 
 

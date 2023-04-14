@@ -3,6 +3,7 @@ import time
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver import ChromeOptions
 
 option = Options()
 
@@ -10,7 +11,8 @@ option.add_argument("--disable-infobars")
 option.add_argument("start-maximized")
 option.add_argument("--disable-extensions")
 option.add_argument("--disable-notification")
-driver = webdriver.Chrome (options = option, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\Automatski testovi\\chromedriver.exe" )
+
+driver = webdriver.Chrome (options = option)
 
 driver.get("https://puppies-closet.com/evidencija/login.php")
 
@@ -27,7 +29,7 @@ dugmePrijava = driver.find_element(By.NAME,"login")
 dugmePrijava.click()        
 time.sleep(3)
 
-
+"""
 menuIzvjestaji = driver.find_elements_by_tag_name("li")
 trazenaRijec = "OPREMA"
 
@@ -48,8 +50,6 @@ while not found and i < len(menuIzvjestaji):
 
 
 
-
-
 """
 menuIzvjestaji = driver.find_elements_by_tag_name("li")
 trazenaRijec = "OPREMA"
@@ -64,7 +64,6 @@ for rijec in menuIzvjestaji:
         break
     time.sleep(4)
 
-"""
 
 odaberTipaOpreme = Select(driver.find_element_by_id("type_id"))
 

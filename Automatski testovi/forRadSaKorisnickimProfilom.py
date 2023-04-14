@@ -1,20 +1,22 @@
 
-import time
 from selenium import webdriver
+import time
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver import ChromeOptions
 
-opcijeZaPokretanje = Options()
+option = Options()
 
-opcijeZaPokretanje.add_argument("--disable-infobars") 
-opcijeZaPokretanje.add_argument("start-maximized") 
-opcijeZaPokretanje.add_argument("--disable-extensions") 
-opcijeZaPokretanje.add_argument("--disable-notification")
+option.add_argument("--disable-infobars") 
+option.add_argument("start-maximized") 
+option.add_argument("--disable-extensions") 
+option.add_argument("--disable-notification")
 
-babic = webdriver.Chrome (options = opcijeZaPokretanje, executable_path = "C:\\Users\\KBard\\OneDrive\\Radna površina\\GitHub testovi\\ITakademija-QA-Projekt\\Automatski testovi\\chromedriver.exe" )
+babic = webdriver.Chrome (options = option)
 
 babic.get("https://puppies-closet.com/evidencija/login.php")
+
 
 time.sleep(3)
 poljeI = babic.find_element(By.NAME,"username")
@@ -27,17 +29,30 @@ dugmeP = babic.find_element(By.NAME,"login")
 dugmeP.click()
 
 
+padajuciMeni = babic.find_elements_by_name("Oprema")
+trazenaRijec = "OPREMA"
+
+for rijec in padajuciMeni:
+
+    v = rijec.text.upper() 
+    
+    if trazenaRijec in v:
+        print(rijec.text)
+        rijec.click()
+        break
+    time.sleep(4)
+"""
 time.sleep(2)
 
 padajuciMeni = babic.find_element(By.CSS_SELECTOR,"#wrapper > header > nav > ul:nth-child(1) > li:nth-child(2) > a")
 padajuciMeni.click()
 time.sleep(5)
-
+"""
 unosPoInverturnomBr = babic.find_element(By.CLASS_NAME, "search")
 unosPoInverturnomBr.send_keys(99)
 
 time.sleep(3)
-dugmePretraga = babic.find_element(By.NAME,"equipmentSearch")
+dugmePretraga = babic.find_element(By.CSS_SELECTOR,"> input.button.blue")
 dugmePretraga.click()
 time.sleep(5)
 
