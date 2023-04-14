@@ -51,12 +51,13 @@ time.sleep(5)
 unosPoInverturnomBr = babic.find_element(By.CLASS_NAME, "search")
 unosPoInverturnomBr.send_keys(99)
 
+
 time.sleep(3)
-dugmePretraga = babic.find_element(By.CSS_SELECTOR,"> input.button.blue")
-dugmePretraga.click()
+Pretraga = babic.find_element(By.CLASS_NAME,"button.blue")
+Pretraga.click()
 time.sleep(5)
 
-dugmeBrisanjeOpreme = babic.find_element(By.CSS_SELECTOR,"#results > div > table > tbody > tr:nth-child(2) > td:nth-child(10) > button.button.red")
+dugmeBrisanjeOpreme = babic.find_element(By.CLASS_NAME,"button.red")
 dugmeBrisanjeOpreme.click()
 time.sleep(4)
 

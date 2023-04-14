@@ -69,7 +69,7 @@ odaberTipaOpreme = Select(driver.find_element_by_id("type_id"))
 
 options = odaberTipaOpreme.options
 
-# Iterate over the options and select the desired option
+
 for option in options:
     if option.text == "Monitor":
         option.click()
@@ -79,10 +79,10 @@ time.sleep(6)
 
 proizvodjacOpreme = Select(driver.find_element_by_id("producer_id"))
 
-# Define the option value to select
+
 trazeniProizvodjac = "Dell"
 
-# Loop through the available options and select the desired one
+
 for proizvodjac in proizvodjacOpreme.options:
     if trazeniProizvodjac.lower() in proizvodjac.text.lower():
         proizvodjac.click()

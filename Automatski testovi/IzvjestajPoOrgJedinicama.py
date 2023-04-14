@@ -29,13 +29,12 @@ dugmeP.click()
 time.sleep(4)
 
 
-opcija = driver.find_element(By.CSS_SELECTOR, "#wrapper > header > nav > ul:nth-child(1) > li:nth-child(3) > a")
+opcija = driver.find_element(By.CLASS_NAME, "main-navigation")
 
 opcija.click()
 time.sleep(5)
-
-dugmeIzvjestaj = driver.find_element(By.NAME, "orgReport")
-
-dugmeIzvjestaj.click()
-
+odabir = driver.find_element(By.ID,"equiptype")
+odabir.click()
+tipOpreme = driver.find_element(By.TAG_NAME,"Tip opreme")
+tipOpreme.click()
 time.sleep(5)
